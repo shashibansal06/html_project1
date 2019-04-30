@@ -1,0 +1,41 @@
+@mixin gradiant($value1,$value2){
+	background: $value1;
+	background: -moz-linear-gradient(left, $value1 0%, $value2 50%, $value1 100%);
+	background: -webkit-linear-gradient(left, $value1 0%,$value2 50%,$value1 100%); 
+	background: linear-gradient(to right,$value1 0%,$value2 50%,$value1 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$value1', endColorstr='$value1',GradientType=1 );
+}
+@mixin box-sizing{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+@mixin text-format($size,$color,$weight,$family){
+	font:{size:$size;}
+	font-weight:$weight;
+	color:$color;
+	font-family:$family;
+}
+@mixin display-top{
+	display: inline-block;
+	vertical-align: top;
+}
+@mixin display-middle{
+	display: inline-block;
+	vertical-align: middle;
+}
+@mixin before-after($position,$height,$width){
+	content:'';
+	position:$position;
+	height:$height;
+	width:$width;
+}
+@mixin border-radius($value){
+	border-radius:$value;
+	-moz-border-radius:$value;
+	-webkit-border-radius:$value;
+}
+@mixin height-width($height,$width){
+	height:$height;
+	width:$width;
+}

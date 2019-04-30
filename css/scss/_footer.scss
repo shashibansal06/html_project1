@@ -1,0 +1,50 @@
+footer{
+	.copyright-box {
+		background-color:$white-color;
+		ul{
+			display: block;
+			padding: 30px 0;
+			@media screen and (max-width:$ptablet){
+				padding: 20px 0;
+			}
+			li{
+				@include display-middle;
+				margin:0 15px;
+				@media screen and (max-width:$ptablet){
+					margin:0 5px;
+				}	
+				a{
+					display: block;
+					font-size: 24px;
+					span{
+						&:before{
+							color: $color6d;
+						}
+						&:hover{
+							&:before{
+								color: $purple-color;
+							}
+						}						
+					}
+					@media screen and (max-width:$ptablet){
+						font-size: 18px;
+					}				
+				}
+			}
+		}		
+		p{
+			@include text-format(15px,$color6d,400,$family);
+			letter-spacing: 0.05em;
+			margin-bottom: 12px;
+			a{
+				color:$purple-color;
+			}
+			@media screen and (max-width:$ptablet){
+				font-size:12px;
+				padding:0 0 10px 0;	
+			}
+		}
+	}
+}
+
+

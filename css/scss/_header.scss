@@ -1,0 +1,194 @@
+header{
+	width: 100%;
+	padding: 0px 130px;
+	top:0;
+	right:0;
+	position: fixed;
+	z-index: 9;
+	background-color: $color46;
+	@media screen and (max-width:$mini-desktop){
+		padding: 0px 50px;
+	}
+	@media screen and (max-width:$ptablet){
+		padding: 5px 20px;
+	}
+	.logo{
+		@include display-middle;
+		width:15%;
+	}
+	.menu-icon{
+		display: none;
+		text-align: right;
+		width:82%;
+		@media screen and (max-width:$ptablet){
+			@include display-middle;
+		}
+		img{
+			width: 20px;
+			cursor: pointer;
+		}
+	}
+	.nav{
+		@include display-middle;
+		text-align: right;
+		width:84%;	
+		@media screen and (max-width:$ptablet){
+			background: rgba(0,0,0,0.9);
+			@include height-width(100vh,100%);
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9;
+			text-align: center;
+			display: none;
+		}		
+		nav{
+			@media screen and (max-width:$ptablet){
+				display: table;
+				@include height-width(100vh,100%);
+			}
+			.close-nav {
+				position: absolute;
+				top: 10px;
+				right: 30px;
+				font-size: 70px;
+				color: $white-color;
+				z-index: 9;
+				cursor:pointer;
+				display: none;
+				@media screen and (max-width:$ptablet){
+					display: block;
+				}
+			}
+			ul{
+				@media screen and (max-width:$ptablet){
+					display:table-cell;
+					vertical-align:middle;
+				}
+				li{
+					@include display-middle;
+					margin-left:55px;
+					@media screen and (max-width:$mini-desktop){
+						margin-left:25px;
+					}
+					@media screen and (max-width:$ptablet){
+						display:block;
+						margin:10px 0;
+					}
+					a{
+						display: block;
+						padding: 30px 5px;
+						position: relative;
+						transition: all 5s ease;
+						@include text-format(18px,$white-color,600,$family);
+						@media screen and (max-width:$mini-desktop){
+							font-size: 14px;
+						}
+						@media screen and (max-width:$ptablet){
+							padding: 15px 5px;
+						}
+						&:before{
+							@include before-after(absolute,2px,100%);
+							background-color: $white-color;
+							bottom: 0;
+							left:0;
+							opacity: 0;
+							transform:translateY(-78px);
+							-moz-transform:translateY(-78px);
+							-webkit-transform:translateY(-78px);
+							transition: all 0.5s ease;
+							-moz-transition: all 0.5s ease;
+							-webkit-transition: all 0.5s ease;
+						}
+						&:hover{
+							&:before{
+								transform:translateY(0);
+								-moz-transform:translateY(0);
+								-webkit-transform:translateY(0);
+								opacity: 1;
+							}
+						}
+						&.apply-btn{
+							border: 1px solid $white-color;
+							@include border-radius(40px);
+							padding: 12px 22px;									
+							display: inline-block;
+							@media screen and (max-width:$ptablet){
+								max-width: 80%;
+							}
+							&:hover{
+								background-color: $white-color;
+								color: $color46;
+							}
+							&:before{
+								content: none;
+							}
+						}
+					}
+				}
+			}
+		}			
+	}	
+}		
+.banner{
+	background-image:url('../images/banner-img.jpg');
+	background-size:cover;
+	height:100vh;
+	.container{
+		height:100%;
+		display:table;			
+		.header-desc{
+			display:table-cell;
+			vertical-align:middle;
+			.header-cont{
+				width:100%;
+				text-align:center;
+				.logo{
+					@media screen and (max-width:$mini-desktop){
+						width:135px;
+					}
+					@media screen and (max-width:$ptablet){
+						width:100px;
+					}
+				}
+				a{
+					display: inline-block;
+					&.bnr-btn{							
+						@include text-format(20px,#7658ad,600,$family);
+						border: 1px solid $white-color;
+						@include border-radius(40px);
+						padding: 18px 40px;
+						background-color: $white-color;
+						margin-top: 50px;
+						&:hover{
+							background-color: transparent;
+							color: $white-color;
+						}
+						@media screen and (max-width:$mini-desktop){
+							font-size:16px;
+							margin-top: 30px;
+						}
+						@media screen and (max-width:$ptablet){
+							padding: 12px 20px;
+						}
+					}
+				}					
+				h2{
+					@include text-format(38px,$white-color,300,$family);
+					line-height:40px;
+					strong{
+						font-weight:700;
+					}
+					@media screen and (max-width:$mini-desktop){
+						font-size:28px;
+						line-height:40px;
+					}
+					@media screen and (max-width:$ptablet){
+						font-size:18px;
+						line-height:30px;
+					}
+				}
+			}
+		}
+	}
+}

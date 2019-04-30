@@ -1,0 +1,275 @@
+main{
+	.about-section{
+		.about-inner{
+			position:relative;
+			padding:60px 0 0px 0;
+			.about-left{
+				float: right;
+				position: relative;
+				width: 31%;
+				padding-left: 32px;
+				border-left:1px dashed #afafaf;
+				@media screen and (max-width:$ptablet){
+					padding:0;
+					width: 100%;
+					text-align: center;
+					border:0 none;
+				}
+				&::before{
+					@include before-after(absolute,15px,15px);
+					@include border-radius(50%);
+					border:3px solid $purple-color;
+					background-color: $white-color;
+					top:0;
+					left:-11px;	
+					@media screen and (max-width:$ptablet){
+						content: none;
+					}				
+				}
+				&:after {
+				    content:"";
+				    position: absolute;
+				    left:-1px;
+				    top:20px;
+				    height: 100%;
+				    width: 1px;					
+					background: -moz-linear-gradient(top, transparent 0%, #ffffff 100%);
+					background: -webkit-linear-gradient(top, transparent 0%,#ffffff 100%);
+					background: linear-gradient(to bottom, transparent 0%,#ffffff 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='transparent', endColorstr='#ffffff',GradientType=0 );
+					@media screen and (max-width:$ptablet){
+						content: none;
+					}	
+					}
+				}
+			.about-right{
+				float:left;
+				width:69%;
+				padding-right: 32px;
+				@media screen and (max-width:$ptablet){
+					width:100%;	
+					padding-left:0px;
+					text-align:center;
+					padding-right: 0px;
+				}
+				h3{
+					@include text-format(30px,$color5a,700,$family);
+					line-height:40px;
+					letter-spacing:0.03em;				
+					margin-bottom: 18px;
+					@media screen and (max-width:$tablet){
+						font-size:25px;
+						line-height:30px;
+					}
+				}
+				p{
+					@include text-format(16px,$p-color,400,$family);
+					line-height:28px;
+					padding-bottom:18px; 
+					@media screen and (max-width:$mini-desktop){
+						font-size: 14px;
+						line-height: 20px;
+						padding-bottom:15px; 
+					}
+				}
+				ul{
+					li{
+						@include display-middle;
+						margin:10px 0px;
+						@media screen and (max-width:$ptablet){
+							margin:0 2px 20px;
+						}						
+					}
+				}
+			}
+		}
+	}
+	.howwork-section{		
+		.howwork-inner{
+			h2{
+				@include height-width(50px,50px);
+				@include border-radius(50%);
+				border:2px dotted $purple-color;
+				text-align: center;
+				margin-bottom: 40px;
+				display: inline-block;
+				@media screen and (max-width:$tablet){
+					@include height-width(40px,40px);
+					margin-bottom: 20px;
+				}
+				span{
+					@include text-format(15px,$purple-color,700,$family);
+					line-height: 44px;
+					@media screen and (max-width:$tablet){
+						line-height: 35px;
+					}
+				}
+			}
+			h3{
+				@include text-format(22px,$text-color,700,$family);
+				line-height: 28px;
+				text-transform: uppercase;
+				@media screen and (max-width:$mini-desktop){
+					font-size: 18px;
+				}
+			}
+			p{
+				@include text-format(18px,$color56,300,$family);
+				line-height: 32px;
+				margin: 20px 0;
+				@media screen and (max-width:$mini-desktop){
+					font-size: 14px;
+					margin: 15px 0;
+					line-height: 22px;
+				}
+			}
+			.box{
+				width:100%;
+				padding: 50px 0 30px 0;
+				position: relative;
+				border-bottom:1px dashed #afafaf;
+				&:before{	
+					content: '';
+					position: absolute;
+					z-index:1;
+					width:50%;
+					bottom: -2px;
+					left:0;
+					height:15px;		
+					background: -moz-linear-gradient(left, #ffffff 50%, transparent 100%);
+					background: -webkit-linear-gradient(left, #ffffff 50%,transparent 100%);
+					background: linear-gradient(to right, #ffffff 50%,transparent 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='transparent',GradientType=0 );			
+				}
+				&:after{
+					background: -moz-linear-gradient(right, #ffffff 50%, transparent 100%);
+					background: -webkit-linear-gradient(right, #ffffff 50%,transparent 100%);
+					background: linear-gradient(to left, #ffffff 50%,transparent 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='transparent',GradientType=0 );	
+					content: '';
+					position: absolute;
+					bottom: -2px;
+					right:0;
+					height:15px;
+					z-index: 1;
+					width:50%;
+				}
+				&:last-child{
+					border-bottom: 0 none;
+					&:before, &:after{
+						content: none;
+					}
+				}
+				.box-left{
+					float:left;
+					width: 33%;
+					@media screen and (max-width:$ptablet){
+						width:100%;
+						text-align: center;
+					}
+				}
+				.box-right{
+					float:right;
+					width: 66%;
+					padding-left: 8%;
+					margin-top:15%;
+					@media screen and (max-width:$mini-desktop){
+						margin-top:10%;
+					}
+					@media screen and (max-width:$ptablet){
+						width:100%;
+						margin-top:0%;
+						padding-left: 0%;
+						text-align: center;
+					}
+				}
+				&.box-position{
+					.box-left{
+						width: 33%;
+						float: right;
+						@media screen and (max-width:$ptablet){
+							width:100%;
+						}
+					}
+					.box-right{
+						width: 66%;
+						padding-right: 8%;
+						padding-left: 0;
+						@media screen and (max-width:$ptablet){
+							width:100%;
+							padding-right:0%;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.form-no{
+	background: #3888c6; 
+	background: -moz-linear-gradient(-45deg, #3888c6 0%, #d252de 100%); 
+	background: -webkit-linear-gradient(-45deg, #3888c6 0%,#d252de 100%); 
+	background: linear-gradient(135deg, #3888c6 0%,#d252de 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3888c6', endColorstr='#d252de',GradientType=1 );
+	.form-inner{
+		background-image: url(../images/footer-form-bg.png);
+		height: 100%;
+		float: left;
+		width: 100%;
+		padding: 180px 0;
+		background-position: top right;
+		background-size: cover;
+		@media screen and (max-width:$tablet){
+			text-align: center;
+		}
+		@media screen and (max-width:$ptablet){
+			padding: 80px 0;
+		}
+	}
+	h3{
+		@include text-format(38px,$white-color,700,$family);
+		margin-bottom: 40px;
+		@media screen and (max-width:$tablet){
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+	}
+	form{
+		width:395px;
+		@include border-radius(30px);
+		display: inline-block;
+		overflow: hidden;
+		max-width: 100%;
+		box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+		-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+		-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.2);
+		background-color: $pink-color;
+		input{
+			background-color: $white-color;
+			border:0 none;
+			@include text-format(16px,$p-color,400,$family);
+			padding: 20px 18px;
+			width:calc(100% - 115px);
+			height:52px;
+			@media screen and (max-width:$ptablet){
+				font-size: 14px;
+				padding: 10px 15px;
+				height:40px;
+			}
+			&[type="submit"]{
+				background-color: $pink-color;
+				float: right;
+				color: #fff;	
+				font-weight: 600;
+				letter-spacing: 0.05em;
+				font-size: 14px;
+				width:115px;
+				line-height: 14px;
+				cursor: pointer;
+			}
+		}
+	}
+}
